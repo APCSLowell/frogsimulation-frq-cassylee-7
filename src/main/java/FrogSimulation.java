@@ -18,11 +18,14 @@ public class FrogSimulation
 		/* to be implemented in part (a) */
 		int pos = 0;
 		int numHops = 0;
-		while (numHops < maxHops)
+		while (numHops < maxHops) {
 			pos += hopDistance();
+			if (pos >= goalDistance)
+				return true;
+			else if (position < 0)	
+				return false;
 			numHops++;
-		if (pos >= goalDistance)
-			return true;
+		}
 		return false;
 	}
 	
